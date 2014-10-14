@@ -1,6 +1,6 @@
 %% The MIT License
 %%
-%% Copyright (C) 2011-2012 by Joseph Wayne Norton <norton@alum.mit.edu>
+%% Copyright (C) 2011-2013 by Joseph Wayne Norton <norton@alum.mit.edu>
 %%
 %% Permission is hereby granted, free of charge, to any person obtaining a copy
 %% of this software and associated documentation files (the "Software"), to deal
@@ -140,7 +140,9 @@ redirect_uri({_File, BaseHref}, URI, E) ->
                 false ->
                     false
             end
-    end.
+    end;
+redirect_uri({_File, BaseHref, _Branch}, URI, E) ->
+    redirect_uri({_File, BaseHref}, URI, E).
 
 get_attrval(Name, #xmlElement{attributes = As}) ->
     case get_attr(Name, As) of

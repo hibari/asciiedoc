@@ -1,7 +1,7 @@
 %% -*- Doc -*-
 %% vim: set syntax=asciidoc:
 @author Joseph Wayne Norton <norton@alum.mit.edu>
-@copyright 2011 by Joseph Wayne Norton
+@copyright 2011-2013 by Joseph Wayne Norton
 @title AsciiEDoc - EDoc extension for generating HTML or Github-flavored Markdown from AsciiDoc sources
 @doc
 AsciiEdoc is an Erlang application that integrates AsciiDoc with EDoc
@@ -21,7 +21,7 @@ flow may be of interest to others.
 
 For sample AsciiDoc-annotated overview.edoc and Erlang source files,
 see UBF and UBF-related repositories on GitHub
-(https://github.com/norton/ubf) for details.
+(https://github.com/ubf/ubf) for details.
 
 _This repository is experimental in nature - use at your own risk and
 please contribute if you find AsciiEDoc useful._
@@ -34,12 +34,9 @@ please follow this recipe:
 ------
 $ mkdir working-directory-name
 $ cd working-directory-name
-$ git clone git://github.com/norton/asciiedoc.git asciiedoc
+$ git clone https://github.com/norton/asciiedoc.git asciiedoc
 $ cd asciiedoc
-$ ./rebar get-deps
-$ ./rebar clean
-$ ./rebar compile
-$ ./rebar skip_deps=true doc
+$ make deps clean compile doc
 ------
 
 == Documentation

@@ -1,11 +1,11 @@
 
 
-#AsciiEDoc - EDoc extension for generating HTML or Github-flavored Markdown from AsciiDoc sources#
+# AsciiEDoc - EDoc extension for generating HTML or Github-flavored Markdown from AsciiDoc sources #
 
+Copyright (c) 2011-2013 by Joseph Wayne Norton
 
-Copyright (c) 2011 by Joseph Wayne Norton
-
-__Authors:__ Joseph Wayne Norton ([`norton@alum.mit.edu`](mailto:norton@alum.mit.edu)).<p>AsciiEdoc is an Erlang application that integrates AsciiDoc with EDoc
+__Authors:__ Joseph Wayne Norton ([`norton@alum.mit.edu`](mailto:norton@alum.mit.edu)).
+<p>AsciiEdoc is an Erlang application that integrates AsciiDoc with EDoc
 or EDoc with EDown.  This may sound a little crazy at first but the
 primary reasons are:</p>
 <ul>
@@ -37,7 +37,7 @@ is fragile when something breaks.  Nevertheless, this documentation
 flow may be of interest to others.</p>
 <p>For sample AsciiDoc-annotated overview.edoc and Erlang source files,
 see UBF and UBF-related repositories on GitHub
-(<a href="https://github.com/norton/ubf">https://github.com/norton/ubf</a>) for details.</p>
+(<a href="https://github.com/ubf/ubf">https://github.com/ubf/ubf</a>) for details.</p>
 <p><em>This repository is experimental in nature - use at your own risk and
 please contribute if you find AsciiEDoc useful.</em></p>
 
@@ -47,14 +47,11 @@ please contribute if you find AsciiEDoc useful.</em></p>
 please follow this recipe:</p>
 
 
-<pre><tt>$ mkdir working-directory-name
+<pre><code>$ mkdir working-directory-name
 $ cd working-directory-name
-$ git clone git://github.com/norton/asciiedoc.git asciiedoc
+$ git clone https://github.com/norton/asciiedoc.git asciiedoc
 $ cd asciiedoc
-$ ./rebar get-deps
-$ ./rebar clean
-$ ./rebar compile
-$ ./rebar skip_deps=true doc</tt></pre>
+$ make deps clean compile doc</code></pre>
 
 
 
@@ -91,13 +88,13 @@ and the backend output markups (which can be almost any type of
 SGML/XML markup) can be customized and extended by the user.</p>
 <p>AsciiDoc is free software and is licenced under the terms of the <em>GNU
 General Public License version 2</em> (GPLv2).</p>
-<p>See <a href="http://www.methods.co.nz/asciidoc/index.md">http://www.methods.co.nz/asciidoc/index.html</a> for further details.</p>
+<p>See <a href="http://www.methods.co.nz/asciidoc/index.html">http://www.methods.co.nz/asciidoc/index.html</a> for further details.</p>
 
 
 
 
 
-##Modules##
+## Modules ##
 
 
 <table width="100%" border="0" summary="list of modules">

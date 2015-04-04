@@ -1,18 +1,12 @@
 %%% -*- mode: erlang -*-
 
-{require_otp_vsn, "R14|R15|R16|17"}.
-
-{erl_opts, [warnings_as_errors]}.
-
-{xref_checks, [undefined_function_calls, deprecated_function_calls]}.
-
 {edoc_opts, [{doclet, asciiedown_doclet}
              , {app_default, "http://www.erlang.org/doc/man"}
              , {new, true}
              , {packages, false}
              , {stylesheet, ""}   % don't copy stylesheet.css
              , {image, ""}        % don't copy erlang.png
-             , {top_level_readme, {"./README.md", "https://github.com/norton/asciiedoc"}}
+             , {top_level_readme, {"./README.md", "https://github.com/norton/asciiedoc", "master"}}
             ]}.
 
 {deps, [{meck, "", {git, "git://github.com/norton/meck.git"}}

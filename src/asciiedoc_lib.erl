@@ -1,6 +1,6 @@
 %% The MIT License
 %%
-%% Copyright (C) 2011-2013 by Joseph Wayne Norton <norton@alum.mit.edu>
+%% Copyright (C) 2011-2015 by Joseph Wayne Norton <norton@alum.mit.edu>
 %%
 %% Permission is hereby granted, free of charge, to any person obtaining a copy
 %% of this software and associated documentation files (the "Software"), to deal
@@ -44,6 +44,7 @@ run(Mod, Cmd, Ctxt) ->
         meck:expect(edoc_wiki, parse_xml, fun parse_xml/2),
         meck:expect(edoc_wiki, expand_text, fun expand_text/2),
         meck:expect(edown_lib, redirect_uri, fun(E) -> redirect_uri(TopLevelReadme, E) end),
+        meck:expect(edown_lib, export, fun(D, O) -> meck:passthrough([D, O]) end),
         %% NOTE: Enable edoc_doclet for HTML output
         %% edoc_doclet:run(Cmd, Ctxt)
         Mod:run(Cmd, Ctxt)
@@ -77,7 +78,7 @@ throw_error(L, D) ->
 %% expand_text/2
 expand_text(Cs, L) ->
     DirName = filename:join(["/", "tmp", ?MODULE_STRING]),
-    {A,B,C}=now(),
+    {A,B,C} = my_now(),
     Unique = lists:flatten(io_lib:format("~p-~p.~p.~p",[node(),A,B,C])),
     FileName = filename:join([DirName, Unique]),
     In = FileName ++ ".in",
@@ -157,3 +158,11 @@ get_attr(Name, [_ | As]) ->
     get_attr(Name, As);
 get_attr(_, []) ->
     [].
+
+my_now() ->
+    case erlang:function_exported(erlang, timestamp, 0) of
+        true ->
+            erlang:timestamp();
+        false ->
+            apply(erlang, now, [])
+    end.
